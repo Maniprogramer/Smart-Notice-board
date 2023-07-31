@@ -29,14 +29,15 @@ char startup[] = "Starting GSM Module";                         //This is variab
 //char 
 
 
-
+const int BUTTON_PIN1 = 2;
+ int buttonState1 = 0;
 
 
 void setup() {
   Timer1.initialize(1000);          
   Timer1.attachInterrupt(ScanDMD);   
   dmd.clearScreen(true);
-  
+  pinMode(BUTTON_PIN1, INPUT_PULLUP);
   Serial.begin(9600);   //serial monitor baud rate
 
 //Initialising the gsm module
@@ -52,10 +53,17 @@ void setup() {
   delay(500);
   Serial.println("AT+CMGF=1");            //Gsm module is set to the text mode
   delay(500);
+  strcpy (msg,startup);
+   p10();
 }
 
 void loop() {
+ buttonState1 = digitalRead(BUTTON_PIN1);
 
+   if(buttonState1 == LOW){
+     p10();
+     Serial.println("Button clicked");
+    }
     for(unsigned int t=0;t<60000;t++)
   {
     serialEvent();                    //calling serial event funtion
