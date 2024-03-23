@@ -13,7 +13,7 @@ This Arduino sketch demonstrates how to use a GSM module to send and receive tex
 ## Components Required
 
 + Arduino board
-+ GSM module (e.g., SIM800L)
++ GSM module (e.g., **SIM800L**)
 + P10 LED display module
 + Jumper wires
 ## Circuit Diagram
@@ -30,11 +30,11 @@ This Arduino sketch demonstrates how to use a GSM module to send and receive tex
 
 + Open the serial monitor in the Arduino IDE or any serial monitor application.
 + Power on the Arduino board.
-+ The sketch will initialize the GSM module and display "System Ready" on the serial monitor once ready.
++ The sketch will initialize the GSM module and display "**System Ready**" on the serial monitor once ready.
 + Press the button connected to pin 2 to display the startup message on the P10 LED display.
-+ The GSM module is set to receiving mode (AT+CNMI=2,2,0,0,0) and text mode (AT+CMGF=1) for SMS handling.
-+ When a message is received (* character detected in the message), it will be displayed on the serial monitor and the P10 LED display.
-+ To send a message, modify the phone number (AT+CMGS="your_phone_number") in the SendMessage function and the message content (msg variable).
++ The GSM module is set to receiving mode **(AT+CNMI=2,2,0,0,0)** and text mode **(AT+CMGF=1)** for SMS handling.
++ When a message is received __("*" character detected in the message)__, it will be displayed on the serial monitor and the P10 LED display.
++ To send a message, modify the phone number __(AT+CMGS="your_phone_number")__ in the SendMessage function and the message content __(msg variable)__.
 + Press the button connected to pin 2 again to send the message using the GSM module.
 + The sent message will be displayed on the serial monitor, and you should receive it on the specified phone number.
 ## Contributing
